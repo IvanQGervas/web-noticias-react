@@ -1,8 +1,14 @@
 import React, { Component } from "react";
+import Nav from '../Nav'
 
 class Head extends Component {
   render() {
-    return <header>Head</header>;
+    return (
+      <>
+        <span>LOGO</span>
+        <Nav />
+      </>
+    );
   }
 }
 
