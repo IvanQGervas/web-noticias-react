@@ -7,14 +7,23 @@ import { Route, Switch } from 'react-router-dom';
 
 
 class Main extends Component {
+
+  state = {
+    news: []
+  }
+
+  handleStateNews = (newNew) => { // Función para modificar el state, pasada al Form
+    this.setState({ news: [...this.state.news, newNew] })
+  }
+
   render() {
     return (
       <main>
         <Switch>
-          <Route path='/' component={Home} exact />
-          <Route path='/form' component={Form}  />
-          <Route path='/list' component={ListNews}  />
-          <Route component={Error}  />
+          <Route exact path="/" component={Home} />
+          <Route path="/form" component={() => <Form handleStateNews={this.handleStateNews} />} />
+          <Route path='/list' component={() => <ListNews news={this.state.news} />} />
+          <Route component={Error} />
         </Switch>
       </main>
     )
