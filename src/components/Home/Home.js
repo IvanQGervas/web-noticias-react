@@ -16,7 +16,6 @@ class Home extends Component {
   }
 
   render() {
-    // this.pruebaFirebase()
     return (
       <h1>Esto es la home</h1>
     )
