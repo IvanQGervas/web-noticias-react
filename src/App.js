@@ -19,11 +19,19 @@ class App extends Component {
        user: {}
     }
   }
+
+  setUser = (value) => {
+    this.setState({user: {name: value}})
+  }
   
   render() {
+    const value = {
+      user: this.state.user,
+      setUser: this.setUser,
+    }
     return (
       <div className="App">
-      <userContext.Provider value={this.state.user}>
+      <userContext.Provider value={value}>
         <BrowserRouter>
           <Head />
           <Main />
