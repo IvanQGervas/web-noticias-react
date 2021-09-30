@@ -11,17 +11,6 @@ class Home extends Component {
     this.inputName = React.createRef()
   }
 
-
-
-  // pruebaFirebase = async (noticia) => {
-  //   try {
-  //     const docRef = await addDoc(collection(db, "noticias"), noticia);
-  //     console.log("Document written with ID: ", docRef.id);
-  //   } catch (e) {
-  //     console.error("Error adding document: ", e);
-  //   }
-  // }
-
   handleSubmit = (event) => {
     event.preventDefault()
   }
