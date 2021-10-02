@@ -10,16 +10,16 @@ class Nav extends Component {
     return (
       <userContext.Consumer>
         {({ user, setUser }) => user.name
-          ? (<ul>
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/form">Crear noticias</Link></li>
-            <li><Link to="/list">Noticias</Link></li>
-            <li><span>{user.name}</span></li>
+          ? (<ul className="Nav">
+            <li className="Nav--li"><Link to="/"><span>Home</span></Link></li>
+            <li className="Nav--li"><Link to="/form"><span>Crear noticias</span></Link></li>
+            <li className="Nav--li"><Link to="/list"><span>Noticias</span></Link></li>
+            <li className="Nav--li"><span className="span-username">Hola, {user.name}</span></li>
           </ul>)
-          : (<ul>
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/form">Crear noticias</Link></li>
-            <li><Link to="/list">Noticias</Link></li>
+          : (<ul className="Nav">
+            <li className="Nav--li"><Link to="/"><span>Home</span></Link></li>
+            <li className="Nav--li"><Link to="/form"><span>Crear noticias</span></Link></li>
+            <li className="Nav--li"><Link to="/list"><span>Noticias</span></Link></li>
           </ul>)
         }
       </userContext.Consumer>

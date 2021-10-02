@@ -4,10 +4,12 @@ import Nav from '../Nav'
 class Head extends Component {
   render() {
     return (
-      <>
-        <span>LOGO</span>
+      <header className="header">
+      <div className="header--content">
+        <span className="header--content-logo">LOGO</span>
         <Nav />
-      </>
+      </div>
+      </header>
     );
   }
 }

@@ -2,12 +2,11 @@ import Head from './components/Head'
 import Main from './components/Main'
 import Footer from './components/Footer'
 
+// Estilos
+import './styles/styles.scss'
+
 import userContext from './context/userContext';
-
 import { BrowserRouter } from 'react-router-dom';
-
-import './App.css';
-
 import React, { Component } from 'react'
 
 class App extends Component {
@@ -30,7 +29,7 @@ class App extends Component {
       setUser: this.setUser,
     }
     return (
-      <div className="App">
+      <div className="app">
       <userContext.Provider value={value}>
         <BrowserRouter>
           <Head />

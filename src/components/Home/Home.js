@@ -3,6 +3,11 @@ import React, { Component } from "react";
 
 import userContext from '../../context/userContext'
 // import { db } from '../../firebase/configFirebase'
+import { TextField, Button } from '@mui/material';
+
+import { Redirect } from 'react-router-dom'
+
+
 
 class Home extends Component {
 
@@ -11,27 +16,49 @@ class Home extends Component {
     this.inputName = React.createRef()
   }
 
+  state = {
+    inputNombre: ''
+  }
+
   handleSubmit = (event) => {
     event.preventDefault()
   }
 
+
+  //   console.log(event.target.nombre.value);
+  // }
+
+  handleChangeInput = (event) => {
+    this.setState({ inputNombre: event.target.value })
+  }
+
   render() {
+    if (this.state.redirect) {
+      return <Redirect to={this.state.redirect} />
+    }
     return (
       <userContext.Consumer>
         {({ user, setUser }) => user.name
           ?
-          <div>
-            <h1>{user.name}, Puedes crear noticias Aqui . O ver las noticias ya disponibles Aqui .</h1>
+          <div className="home">
+            <div className="home--container container-small">
+              <h1>{user.name}, puedes visitar la sección crear noticias.</h1>
+              <Button variant="contained" onClick={() => this.setState({redirect: '/form'})}>Visitar</Button>
+            </div>
+            <div className="home--container container-small">
+              <h1>También puedes ver las noticias ya disponibles.</h1>
+              <Button variant="contained" onClick={() => this.setState({redirect: '/list'})}>Visitar</Button>
+            </div>
           </div>
           :
-          <div>
-            <h1>Bienvenido/a! Dinos tu nombre para asociarte a las noticias creadas por ti</h1>
-            {console.log(user)}
-            <form onSubmit={this.handleSubmit}>
-              <label htmlFor="Nombre"></label>
-              <input type="text" ref={this.inputName} />
-              <input type="submit" onClick={() => setUser(this.inputName.current.value)} />
-            </form>
+          <div className="home">
+            <div className="home--container">
+              <h1 className="home--container-h1">Bienvenido/a!<br />Dinos tu nombre para asociarte a las noticias creadas por ti</h1>
+              <form onSubmit={this.handleSubmit} className="home--container-form">
+                <TextField id="nombre" label="Nombre" variant="standard" onChange={this.handleChangeInput} />
+                <Button color="primary" type="submit" variant="contained" onClick={() => setUser(this.state.inputNombre)}>Enviar</Button>
+              </form>
+            </div>
           </div>
         }
       </userContext.Consumer>
