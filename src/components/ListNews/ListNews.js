@@ -22,10 +22,10 @@ class ListNews extends Component {
   };
 
   async componentDidMount() {
-    const res = await axios.get(process.env.REACT_APP_URL)
-    const data = await res.data.articles
-
-    this.setState({ news: [...this.state.news, ...data] })
+    const res = await fetch(`${process.env.REACT_APP_URL}`)
+    const data = await res.json()
+    console.log(data)
+    this.setState({ news: [...this.state.news, ...data.articles] })
   }
 
   render() {
