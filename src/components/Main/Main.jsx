@@ -18,7 +18,7 @@ class Main extends Component {
 
   render() {
     return (
-      <main>
+      <main className="Main">
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/form" component={() => <Form handleStateNews={this.handleStateNews} />} />

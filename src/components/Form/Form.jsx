@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Redirect } from 'react-router-dom';
 
 import userContext from "../../context/userContext";
+import { TextField, Button } from '@mui/material';
 
 class Form extends Component {
 
@@ -10,7 +11,7 @@ class Form extends Component {
 
     this.state = {
       redirect: false,
-      obj: {}
+      newNews: {}
     }
   }
 
@@ -19,17 +20,17 @@ class Form extends Component {
     event.preventDefault()
 
     const title = event.target.titulo.value
-    const urlToImage = event.target.img.value
+    const urlToImage = event.target.url.value
     const content = event.target.contenido.value
-
-    const obj = {
+    console.log(title, urlToImage, content );
+    const newNews = {
       title,
       urlToImage,
       content,
       publishedAt: new Date(),
       author: this.context.user ? this.context.user.name : 'Anonimo'
     }
-    this.setState({ redirect: true, obj })
+    this.setState({ redirect: true, newNews })
   }
 
   render() {
@@ -37,25 +38,34 @@ class Form extends Component {
     console.log(userContext.Consumer.currentValue);
     if (!this.state.redirect) {
       return (
-        <div>
-          <h2>Añade una nueva noticia</h2>
+        <div className="form">
+          <div className="form--container">
+            <h2>Añade una nueva noticia</h2>
 
-          <form onSubmit={this.handleSubmit}>
-            <label>Titutlo</label>
-            <input type="text" name="titulo" />
+            <form onSubmit={this.handleSubmit}>
+              <TextField required name="titulo" className="inputs" id="" label="Titulo" variant="standard" />
 
-            <label>Url imagen</label>
-            <input type="text" name="img" />
+              <TextField required name="url" className="inputs" id="" label="Url imagen" variant="standard" defaultValue="https://..."/>
 
-            <label>Contenido</label>
-            <input type="text" name="contenido" />
+              <TextField
+                required
+                name="contenido"
+                className="inputs"
+                id="standard-multiline-static"
+                label="Contenido"
+                multiline
+                rows={4}
+                defaultValue="Contenido..."
+                variant="standard"
+              />
 
-            <input type="submit" />
-          </form>
+              <Button color="primary" type="submit" variant="contained">Enviar</Button>
+            </form>
+          </div>
         </div>
       )
     } else {
-      this.props.handleStateNews(this.state.obj)
+      this.props.handleStateNews(this.state.newNews)
       return <Redirect to="/list" />
     }
   }
