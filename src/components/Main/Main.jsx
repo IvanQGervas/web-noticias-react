@@ -1,9 +1,12 @@
+// Dependencias
 import React, { Component } from "react";
+import { Route, Switch } from 'react-router-dom';
+
+// Componentes
 import Home from '../Home'
 import Form from '../Form'
 import ListNews from '../ListNews'
 
-import { Route, Switch } from 'react-router-dom';
 
 
 class Main extends Component {

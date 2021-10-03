@@ -1,3 +1,4 @@
+// Componentes
 import Head from './components/Head'
 import Main from './components/Main'
 import Footer from './components/Footer'
@@ -5,6 +6,8 @@ import Footer from './components/Footer'
 // Estilos
 import './styles/styles.scss'
 
+// Dependencias
+import cogoToast from 'cogo-toast';
 import userContext from './context/userContext';
 import { BrowserRouter } from 'react-router-dom';
 import React, { Component } from 'react'
@@ -20,6 +23,7 @@ class App extends Component {
   }
 
   setUser = (value) => {
+    cogoToast.success("Sesión iniciada correctamente!");
     this.setState({user: {name: value}})
   }
   

@@ -1,11 +1,12 @@
+// Dependencias
 import React, { Component } from "react";
 import axios from "axios";
+import cogoToast from 'cogo-toast';
 
-// import Masonry, { ResponsiveMasonry } from "react-responsive-masonry"
+// Libreria imagenes
 import Masonry from 'react-masonry-css'
 
-// import cogoToast from 'cogo-toast';
-
+// Componentes
 import Card from '../Card'
 
 class ListNews extends Component {
@@ -17,6 +18,7 @@ class ListNews extends Component {
   removeFunction = (index) => {
     const updatedNews = this.state.news.filter((el, i) => i !== index)
     this.setState({ news: updatedNews })
+    cogoToast.info("Noticia eliminada", { position: 'top-right', heading: 'Aviso!' });
   };
 
   async componentDidMount() {
@@ -34,9 +36,6 @@ class ListNews extends Component {
     };
     console.log(this.state.news);
     return (
-      // <div>
-      // { this.state.news.map((el, index) => <Card removeFunction={() => this.removeFunction(index)} value={el} key={index} />) }
-      // </div>
       <div className="list-news">
         <div className="list-news--container">
           <Masonry

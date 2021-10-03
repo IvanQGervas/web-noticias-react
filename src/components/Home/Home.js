@@ -1,8 +1,10 @@
+// Dependencias
 import React, { Component } from "react";
-// import { collection, addDoc } from "firebase/firestore";
 
+// Contexto de usuario
 import userContext from '../../context/userContext'
-// import { db } from '../../firebase/configFirebase'
+
+// Material UI
 import { TextField, Button } from '@mui/material';
 
 import { Redirect } from 'react-router-dom'

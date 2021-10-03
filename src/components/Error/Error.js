@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 class Error extends Component {
   render() {
-    return <div>Error</div>;
+    return <div>Ruta no encontrada</div>;
   }
 }
 

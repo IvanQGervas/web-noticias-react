@@ -1,8 +1,9 @@
+// Dependencias
 import React, { Component } from "react";
+
+// Componentes
 import Nav from '../Nav'
 
-import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
 
 class Head extends Component {
 
@@ -10,7 +11,7 @@ class Head extends Component {
     return (
       <header className="header">
         <div className="header--content">
-          <span className="header--content-logo">LOGO</span>
+          <span className="header--content-logo">News App</span>
           <Nav/>
         </div>
       </header>
