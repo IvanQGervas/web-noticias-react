@@ -24,10 +24,6 @@ class Home extends Component {
     event.preventDefault()
   }
 
-
-  //   console.log(event.target.nombre.value);
-  // }
-
   handleChangeInput = (event) => {
     this.setState({ inputNombre: event.target.value })
   }

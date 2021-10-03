@@ -33,3 +33,113 @@
         font-weight: bold;
     }
 }
+
+
+@media (max-width: 768px) {
+    .Nav{
+        // text-decoration: none;
+        // list-style: none;
+        // display: flex;
+        // justify-content: space-between;
+        // align-items: center;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: #eee;
+        margin: 0;
+        padding: 0;
+    
+        &--li{
+            width: 100%;
+            text-align: center;
+            height: 50px;
+            line-height: 50px;
+
+            a{
+                text-decoration: none;
+                span{
+                    margin-left: 0;
+                    // // background: grey;
+                    // width: 100%;
+                    // height: 100%;
+                    // color: black;
+                    display: block;
+                    padding: 0;
+                    width: 100%;
+                    background: rgb(230, 230, 230);
+                    // font-weight: bold;
+                }
+                span:hover{
+                    background: rgb(196, 196, 196);
+                    transition: 0.4s ease;
+                }
+            }
+        }
+    
+        .span-username{
+            border-left: none;
+            padding-left: 0px;
+            margin-left: 0  px;
+            font-size: large;
+            font-weight: bold;
+        }
+    }
+}
+
+
+// @media (max-width: 580px) {
+//     .Nav{
+//         margin-bottom: 20px;
+//     }
+// }
+
+
+// .display-menu{
+//     display: block;
+// }
+
+// .nodisplay-menu{
+//     display: none;
+// }
+
+// @media (max-width: 768px) {
+//     .Nav{
+//         // flex-wrap: wrap;
+//         z-index: 999;
+//         position: absolute;
+//         top: 55px;
+//         right: 0;
+//         flex-direction: column;
+//         background: #eee;
+//         width: 100%;
+//         &--li{
+//             width: 100%;
+//             height: 80px;
+//             line-height: 80px;
+//             a{
+//                 width: 100%;
+//                 height: 100%;
+//                 span{
+//                     padding: 0;
+//                     margin: 0;
+//                     display: block;
+//                     text-align: center;
+//                     width: 100%;
+//                     height: 100%;
+//                 }
+//                 span:hover{
+//                 }
+//             }
+//         }
+    
+//         .span-username{
+//             display: block;
+//             text-align: center;
+//             border: none;
+//             margin: 0;
+//             padding: 0;
+//         }
+//     }
+// }

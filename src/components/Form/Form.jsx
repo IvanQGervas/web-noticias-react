@@ -43,11 +43,12 @@ class Form extends Component {
             <h2>Añade una nueva noticia</h2>
 
             <form onSubmit={this.handleSubmit}>
-              <TextField name="titulo" className="inputs" id="" label="Titulo" variant="standard" />
+              <TextField required name="titulo" className="inputs" id="" label="Titulo" variant="standard" />
 
-              <TextField name="url" className="inputs" id="" label="Url imagen" variant="standard" defaultValue="https://..."/>
+              <TextField required name="url" className="inputs" id="" label="Url imagen" variant="standard" defaultValue="https://..."/>
 
               <TextField
+                required
                 name="contenido"
                 className="inputs"
                 id="standard-multiline-static"

@@ -1,0 +1,49 @@
+.card{
+    box-sizing: border-box;
+    width: 100%;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+
+   
+    img{
+        width: 100%;
+        margin-bottom: 10px;
+        object-fit: cover;
+    }
+
+    .container-content{
+        margin: auto;
+        width: 90%;
+    
+        h3{
+            text-align: justify;
+        }
+        
+        span{
+            font-style: italic;
+        }
+        
+        p{
+            text-align: justify;
+        }
+    }
+
+    .delete-button{
+        display: none;
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        z-index: 99;
+
+        :hover{
+            color: salmon;
+        }
+    }
+}
+
+
+.card:hover .delete-button{
+    display: inline-block;
+}
